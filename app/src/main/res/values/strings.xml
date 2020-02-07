@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Munchkin</string>
 
+    <string name="player_name">Insert player name</string>
+    <string name="add_level">Add level</string>
+    <string name="remove_level">Remove level</string>
+    <string name="gender">Gender</string>
 </resources>

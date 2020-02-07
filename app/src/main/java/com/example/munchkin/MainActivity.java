@@ -18,6 +18,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.munchkin.custom_views.PlayerView;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
