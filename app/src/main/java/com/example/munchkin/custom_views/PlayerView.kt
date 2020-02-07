@@ -9,14 +9,8 @@ import com.example.munchkin.R
 
 class PlayerView(context: Context?, attrs: AttributeSet?) : LinearLayout(context, attrs) {
 
-    private val name: TextView
-
     init {
         View.inflate(context, R.layout.player_view,this)
-
-        name = findViewById(R.id.player_name)
-
-        name.setText("Alessandro")
     }
 
 }

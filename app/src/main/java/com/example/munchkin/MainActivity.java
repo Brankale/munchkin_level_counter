@@ -144,49 +144,49 @@ public class MainActivity extends Activity {
         aggiornaFile();
     }
 
-    public void addLevel(View v){
-        ImageButton b = (ImageButton)v;
-        switch (b.getId()){
-            case R.id.add1:
-                if(Integer.parseInt(level1.getText().toString())<9)
-                    level1.setText(Integer.parseInt(level1.getText().toString())+1+"");
-                else
-                    vittoria(1);
-                break;
-            case R.id.add2:
-                if(Integer.parseInt(level2.getText().toString())<9)
-                    level2.setText(Integer.parseInt(level2.getText().toString())+1+"");
-                else
-                    vittoria(2);
-                break;
-            case R.id.add3:
-                if(Integer.parseInt(level3.getText().toString())<9)
-                    level3.setText(Integer.parseInt(level3.getText().toString())+1+"");
-                else
-                    vittoria(3);
-                break;
-        }
-        creaNotifica();
-    }
+//    public void addLevel(View v){
+//        ImageButton b = (ImageButton)v;
+//        switch (b.getId()){
+//            case R.id.add1:
+//                if(Integer.parseInt(level1.getText().toString())<9)
+//                    level1.setText(Integer.parseInt(level1.getText().toString())+1+"");
+//                else
+//                    vittoria(1);
+//                break;
+//            case R.id.add2:
+//                if(Integer.parseInt(level2.getText().toString())<9)
+//                    level2.setText(Integer.parseInt(level2.getText().toString())+1+"");
+//                else
+//                    vittoria(2);
+//                break;
+//            case R.id.add3:
+//                if(Integer.parseInt(level3.getText().toString())<9)
+//                    level3.setText(Integer.parseInt(level3.getText().toString())+1+"");
+//                else
+//                    vittoria(3);
+//                break;
+//        }
+//        creaNotifica();
+//    }
 
-    public void removeLevel(View v){
-        ImageButton b = (ImageButton)v;
-        switch (b.getId()){
-            case R.id.remove1:
-                if(Integer.parseInt(level1.getText().toString())>1)
-                    level1.setText(Integer.parseInt(level1.getText().toString())-1+"");
-                break;
-            case R.id.remove2:
-                if(Integer.parseInt(level2.getText().toString())>1)
-                    level2.setText(Integer.parseInt(level2.getText().toString())-1+"");
-                break;
-            case R.id.remove3:
-                if(Integer.parseInt(level3.getText().toString())>1)
-                    level3.setText(Integer.parseInt(level3.getText().toString())-1+"");
-                break;
-        }
-        creaNotifica();
-    }
+//    public void removeLevel(View v){
+//        ImageButton b = (ImageButton)v;
+//        switch (b.getId()){
+//            case R.id.remove1:
+//                if(Integer.parseInt(level1.getText().toString())>1)
+//                    level1.setText(Integer.parseInt(level1.getText().toString())-1+"");
+//                break;
+//            case R.id.remove2:
+//                if(Integer.parseInt(level2.getText().toString())>1)
+//                    level2.setText(Integer.parseInt(level2.getText().toString())-1+"");
+//                break;
+//            case R.id.remove3:
+//                if(Integer.parseInt(level3.getText().toString())>1)
+//                    level3.setText(Integer.parseInt(level3.getText().toString())-1+"");
+//                break;
+//        }
+//        creaNotifica();
+//    }
 
     public void changeSex(View v){
         ImageButton b = (ImageButton)v;

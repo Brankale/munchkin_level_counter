@@ -3,35 +3,55 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/player_name"
-        android:autofillHints="@string/player_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    android:orientation="horizontal"
+    android:layout_margin="15dp">
 
     <ImageView
         android:id="@+id/gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/gender"/>
+        android:contentDescription="@string/gender"
+        android:background="@mipmap/male_icon2"/>
 
-    <ImageView
-        android:id="@+id/remove_level"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/remove_level"/>
+        android:orientation="vertical"
+        android:layout_marginStart="10dp">
 
-    <TextView
-        android:id="@+id/level"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/name"
+            android:autofillHints="@string/player_name"
+            android:hint="@string/player_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <ImageView
-        android:id="@+id/add_level"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/add_level"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/remove_level"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:contentDescription="@string/remove_level"
+                android:background="@drawable/ic_remove_circle_outline_black_24dp"/>
+
+            <TextView
+                android:id="@+id/level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/add_level"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:contentDescription="@string/add_level"
+                android:background="@drawable/ic_add_circle_outline_black_24dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
