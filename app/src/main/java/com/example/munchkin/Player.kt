@@ -2,8 +2,10 @@ package com.example.munchkin
 
 class Player {
 
-    private val MALE: Boolean = false
-    private val FEMALE: Boolean = true
+    companion object {
+        private const val MALE: Boolean = false
+        private const val FEMALE: Boolean = false
+    }
 
     var name: String = ""
     var sex: Boolean = MALE
