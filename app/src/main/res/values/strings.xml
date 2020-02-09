@@ -9,5 +9,6 @@
     <!-- toolbar -->
     <string name="add_player">Add player</string>
     <string name="remove_player">Remove player</string>
+    <string name="new_game">New game</string>
 
 </resources>

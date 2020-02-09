@@ -15,4 +15,10 @@
         android:icon="@drawable/ic_remove_black_24dp"
         app:showAsAction="ifRoom"/>
 
+    <item
+        android:id="@+id/new_game"
+        android:title="@string/new_game"
+        android:icon="@drawable/ic_autorenew_black_24dp"
+        app:showAsAction="ifRoom"/>
+
 </menu>

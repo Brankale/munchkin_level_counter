@@ -8,7 +8,6 @@ import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.munchkin.custom_views.PlayerView
 
-
 class MainActivityNew : AppCompatActivity() {
 
     private val TAG: String = MainActivityNew::class.java.simpleName
@@ -20,7 +19,7 @@ class MainActivityNew : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_new)
-        setSupportActionBar(findViewById(R.id.my_toolbar))
+        setSupportActionBar(findViewById(R.id.action_bar))
 
         playersView = findViewById(R.id.player_list)
         players = ArrayList()
@@ -30,7 +29,7 @@ class MainActivityNew : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.my_toolbar, menu)
+        menuInflater.inflate(R.menu.action_bar, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
