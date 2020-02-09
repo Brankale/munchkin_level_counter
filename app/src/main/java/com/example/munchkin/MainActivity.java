@@ -84,21 +84,21 @@ public class MainActivity extends Activity {
             level3.setText(savedInstanceState.getString("level3"));
 
             if(savedInstanceState.getString("sex1").equals("M")){
-                sex1.setBackgroundResource(R.mipmap.male_icon2);
+                sex1.setBackgroundResource(R.drawable.ic_male);
             }else {
-                sex1.setBackgroundResource(R.mipmap.female_icon2);
+                sex1.setBackgroundResource(R.drawable.ic_female);
             }
 
             if(savedInstanceState.getString("sex2").equals("M")){
-                sex2.setBackgroundResource(R.mipmap.male_icon2);
+                sex2.setBackgroundResource(R.drawable.ic_male);
             }else {
-                sex2.setBackgroundResource(R.mipmap.female_icon2);
+                sex2.setBackgroundResource(R.drawable.ic_female);
             }
 
             if(savedInstanceState.getString("sex3").equals("M")){
-                sex3.setBackgroundResource(R.mipmap.male_icon2);
+                sex3.setBackgroundResource(R.drawable.ic_male);
             }else {
-                sex3.setBackgroundResource(R.mipmap.female_icon2);
+                sex3.setBackgroundResource(R.drawable.ic_female);
             }
 
             /*keepScreenOn = savedInstanceState.getBoolean("keepScreenOn");
@@ -192,10 +192,10 @@ public class MainActivity extends Activity {
         ImageButton b = (ImageButton)v;
 
         if(b.getTag().toString().equals("M")){
-            b.setBackgroundResource(R.mipmap.female_icon2);
+            b.setBackgroundResource(R.drawable.ic_female);
             b.setTag("F");
         }else {
-            b.setBackgroundResource(R.mipmap.male_icon2);
+            b.setBackgroundResource(R.drawable.ic_male);
             b.setTag("M");
         }
         creaNotifica();
@@ -227,9 +227,9 @@ public class MainActivity extends Activity {
                         level1.setText("1");
                         level2.setText("1");
                         level3.setText("1");
-                        sex1.setBackgroundResource(R.mipmap.male_icon2);
-                        sex2.setBackgroundResource(R.mipmap.male_icon2);
-                        sex3.setBackgroundResource(R.mipmap.male_icon2);
+                        sex1.setBackgroundResource(R.drawable.ic_male);
+                        sex2.setBackgroundResource(R.drawable.ic_male);
+                        sex3.setBackgroundResource(R.drawable.ic_male);
                         dialog.cancel();
                         creaNotifica();
                     }
@@ -280,10 +280,10 @@ public class MainActivity extends Activity {
             level1.setText(tokenizer.nextToken());
             temp = tokenizer.nextToken();
             if (temp.equals("M")) {
-                sex1.setBackgroundResource(R.mipmap.male_icon2);
+                sex1.setBackgroundResource(R.drawable.ic_male);
                 sex1.setTag("M");
             } else {
-                sex1.setBackgroundResource(R.mipmap.female_icon2);
+                sex1.setBackgroundResource(R.drawable.ic_female);
                 sex1.setTag("F");
             }
 
@@ -292,10 +292,10 @@ public class MainActivity extends Activity {
             level2.setText(tokenizer.nextToken());
             temp = tokenizer.nextToken();
             if (temp.equals("M")) {
-                sex2.setBackgroundResource(R.mipmap.male_icon2);
+                sex2.setBackgroundResource(R.drawable.ic_male);
                 sex2.setTag("M");
             } else {
-                sex2.setBackgroundResource(R.mipmap.female_icon2);
+                sex2.setBackgroundResource(R.drawable.ic_female);
                 sex2.setTag("F");
             }
 
@@ -304,10 +304,10 @@ public class MainActivity extends Activity {
             level3.setText(tokenizer.nextToken());
             temp = tokenizer.nextToken();
             if (temp.equals("M")) {
-                sex3.setBackgroundResource(R.mipmap.male_icon2);
+                sex3.setBackgroundResource(R.drawable.ic_male);
                 sex3.setTag("M");
             } else {
-                sex3.setBackgroundResource(R.mipmap.female_icon2);
+                sex3.setBackgroundResource(R.drawable.ic_female);
                 sex3.setTag("F");
             }
 
@@ -362,11 +362,11 @@ public class MainActivity extends Activity {
                                 level2.setText("1");
                                 level3.setText("1");
                                 sex1.setTag("M");
-                                sex1.setBackgroundResource(R.mipmap.male_icon2);
+                                sex1.setBackgroundResource(R.drawable.ic_male);
                                 sex2.setTag("M");
-                                sex2.setBackgroundResource(R.mipmap.male_icon2);
+                                sex2.setBackgroundResource(R.drawable.ic_male);
                                 sex3.setTag("M");
-                                sex3.setBackgroundResource(R.mipmap.male_icon2);
+                                sex3.setBackgroundResource(R.drawable.ic_male);
                                 try {
                                     File f = new File(getFilesDir(), FILENAME);
                                     BufferedWriter bw = new BufferedWriter(new FileWriter(f));

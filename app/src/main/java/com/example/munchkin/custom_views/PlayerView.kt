@@ -3,6 +3,7 @@ package com.example.munchkin.custom_views
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -25,11 +26,10 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
         name = findViewById(R.id.name)
         sex = findViewById(R.id.sex)
         level = findViewById(R.id.current_level)
-        levelUp = findViewById(R.id.remove_level)
-        levelDown = findViewById(R.id.add_level)
+        levelUp = findViewById(R.id.level_up)
+        levelDown = findViewById(R.id.level_down)
 
         player = Player()
-
 
         attrs?.let {
             val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.PlayerView, 0, 0)
@@ -39,6 +39,18 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
             player.sex = typedArray.getInt(R.styleable.PlayerView_sex, 0) > 0
 
             typedArray.recycle()
+        }
+
+        sex.setOnClickListener {
+            player.changeSex()
+
+            if (player.isMale()) {
+                sex.setImageResource(R.drawable.ic_male)
+                sex.setBackgroundResource(R.color.male)
+            } else {
+                sex.setImageResource(R.drawable.ic_female)
+                sex.setBackgroundResource(R.color.female)
+            }
         }
     }
 

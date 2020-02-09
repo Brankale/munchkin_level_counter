@@ -24,4 +24,8 @@ class Player {
         }
     }
 
+    fun changeSex() {
+        sex = !sex
+    }
+
 }
