@@ -11,9 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        android:elevation="4dp"/>
+
+    <com.example.munchkin.custom_views.PlayerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.example.munchkin.custom_views.PlayerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <ListView
         android:id="@+id/player_list"
