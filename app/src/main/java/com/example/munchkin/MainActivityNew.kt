@@ -1,8 +1,10 @@
 package com.example.munchkin
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.example.munchkin.custom_views.PlayerView
+
 
 class MainActivityNew : AppCompatActivity() {
 
@@ -10,10 +12,22 @@ class MainActivityNew : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main_new)
 
-        val view = PlayerView(this, null)
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+    }
 
-        setContentView(view)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.my_toolbar, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.add_player -> TODO("implement add player")
+            R.id.remove_player -> TODO("implement remove player")
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 
 }

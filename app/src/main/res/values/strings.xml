@@ -5,4 +5,9 @@
     <string name="level_up">Add level</string>
     <string name="level_down">Remove level</string>
     <string name="sex">Sex</string>
+
+    <!-- toolbar -->
+    <string name="add_player">Add player</string>
+    <string name="remove_player">Remove player</string>
+
 </resources>
