@@ -7,9 +7,9 @@
     android:layout_margin="15dp">
 
     <ImageView
-        android:id="@+id/gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/sex"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
         android:contentDescription="@string/gender"
         android:background="@mipmap/male_icon2"/>
 
@@ -21,6 +21,7 @@
 
         <EditText
             android:id="@+id/name"
+            android:inputType="text"
             android:autofillHints="@string/player_name"
             android:hint="@string/player_name"
             android:layout_width="match_parent"
@@ -39,7 +40,7 @@
                 android:background="@drawable/ic_remove_circle_outline_black_24dp"/>
 
             <TextView
-                android:id="@+id/level"
+                android:id="@+id/current_level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

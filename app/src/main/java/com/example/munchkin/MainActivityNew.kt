@@ -8,7 +8,10 @@ class MainActivityNew : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(PlayerView(this, null))
+
+        val view = PlayerView(this, null)
+
+        setContentView(view)
     }
 
 }
