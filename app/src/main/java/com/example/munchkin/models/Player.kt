@@ -1,4 +1,4 @@
-package com.example.munchkin
+package com.example.munchkin.models
 
 class Player {
 

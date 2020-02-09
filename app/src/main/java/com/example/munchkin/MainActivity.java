@@ -433,7 +433,7 @@ public class MainActivity extends Activity {
 
 
         Notification.Builder notification  = new Notification.Builder(this)
-                .setSmallIcon(R.mipmap.munchkin_icon)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("Partita")
                 .setContentText(contentText);
 

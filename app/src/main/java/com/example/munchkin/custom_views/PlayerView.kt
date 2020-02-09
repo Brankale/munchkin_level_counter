@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.example.munchkin.Player
+import com.example.munchkin.models.Player
 import com.example.munchkin.R
 
 class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
@@ -51,6 +51,21 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
                 sex.setBackgroundResource(R.color.female)
             }
         }
+
+        levelUp.setOnClickListener {
+            player.levelUp()
+            setLevel()
+        }
+
+        levelDown.setOnClickListener {
+            player.levelDown()
+            setLevel()
+        }
+    }
+
+    private fun setLevel() {
+        // TODO: undestand why the app crashes when setting text
+        //level.setText(player.level)
     }
 
 }
