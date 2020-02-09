@@ -2,6 +2,8 @@ package com.example.munchkin.models
 
 class Player {
 
+    private val TAG: String = Player::class.java.simpleName
+
     companion object {
         private const val MALE: Boolean = false
         private const val FEMALE: Boolean = false

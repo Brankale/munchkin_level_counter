@@ -12,7 +12,6 @@ import android.widget.Toast
 import com.example.munchkin.R
 import com.example.munchkin.models.Player
 
-
 class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
 
     private val TAG: String = PlayerView::class.java.simpleName
