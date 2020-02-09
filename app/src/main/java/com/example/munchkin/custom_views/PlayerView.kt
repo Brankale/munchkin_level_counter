@@ -2,6 +2,7 @@ package com.example.munchkin.custom_views
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -10,6 +11,8 @@ import com.example.munchkin.models.Player
 import com.example.munchkin.R
 
 class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
+
+    private val TAG: String = PlayerView::class.java.simpleName
 
     private val player: Player
 
@@ -40,6 +43,8 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
             typedArray.recycle()
         }
 
+        setLevel()
+
         sex.setOnClickListener {
             player.changeSex()
 
@@ -64,8 +69,7 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
     }
 
     private fun setLevel() {
-        // TODO: undestand why the app crashes when setting text
-        //level.setText(player.level)
+        level.text = player.level.toString()
     }
 
 }

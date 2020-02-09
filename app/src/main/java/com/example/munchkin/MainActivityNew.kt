@@ -6,6 +6,8 @@ import com.example.munchkin.custom_views.PlayerView
 
 class MainActivityNew : AppCompatActivity() {
 
+    private val TAG: String = MainActivityNew::class.java.simpleName
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
