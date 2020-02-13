@@ -16,5 +16,6 @@
 
     <!-- Toast -->
     <string name="max_players">There cannot be more than 6 players</string>
+    <string name="min_players">There cannot be less than 3 players</string>
 
 </resources>

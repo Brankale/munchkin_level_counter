@@ -77,10 +77,12 @@ class MainActivityNew : AppCompatActivity() {
     }
 
     private fun removePlayer() {
-        if (playerList.isNotEmpty()) {
+        if (playerList.size > MIN_PLAYERS) {
             playerList.removeAt(playerList.size-1)
             // TODO: don't refresh all items
             playerAdapter.notifyDataSetChanged()
+        } else {
+            Toast.makeText(this, R.string.min_players, Toast.LENGTH_SHORT).show()
         }
     }
 
