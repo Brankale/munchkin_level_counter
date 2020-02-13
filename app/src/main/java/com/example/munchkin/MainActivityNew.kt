@@ -20,9 +20,10 @@ class MainActivityNew : AppCompatActivity() {
 
     private val TAG: String = MainActivityNew::class.java.simpleName
 
-    lateinit var playerListView: PlayerListView
-    lateinit var playerAdapter: PlayerAdapter
+    private lateinit var playerListView: PlayerListView
+    private lateinit var playerAdapter: PlayerAdapter
     private val playerList = ArrayList<Player>(MIN_PLAYERS)
+    private var toast: Toast? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +55,7 @@ class MainActivityNew : AppCompatActivity() {
             true
         }
         R.id.new_game -> {
+
             AlertDialog.Builder(this)
                     .setMessage(R.string.dialog_new_game)
                     .setPositiveButton(android.R.string.yes,
@@ -71,7 +73,9 @@ class MainActivityNew : AppCompatActivity() {
             playerList.add(Player())
             playerAdapter.notifyItemInserted(playerList.size-1)
         } else {
-            Toast.makeText(this, R.string.max_players, Toast.LENGTH_SHORT).show()
+            toast?.cancel()     // cancel previous toast
+            toast = Toast.makeText(this, R.string.max_players, Toast.LENGTH_SHORT)
+            toast?.show()
         }
     }
 
@@ -81,7 +85,9 @@ class MainActivityNew : AppCompatActivity() {
             playerList.removeAt(position)
             playerAdapter.notifyItemRemoved(position)
         } else {
-            Toast.makeText(this, R.string.min_players, Toast.LENGTH_SHORT).show()
+            toast?.cancel()     // cancel previous toast
+            toast = Toast.makeText(this, R.string.min_players, Toast.LENGTH_SHORT)
+            toast?.show()
         }
     }
 
