@@ -5,10 +5,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.munchkin.R
 import com.example.munchkin.models.Player
 
@@ -21,8 +18,8 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
     private val name: TextView
     private val sex: ImageView
     private val level: TextView
-    private val levelUp: ImageView
-    private val levelDown: ImageView
+    private val levelUp: FrameLayout
+    private val levelDown: FrameLayout
 
     init {
         View.inflate(context, R.layout.player_view,this)
