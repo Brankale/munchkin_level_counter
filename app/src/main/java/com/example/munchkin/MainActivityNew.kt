@@ -69,8 +69,7 @@ class MainActivityNew : AppCompatActivity() {
     private fun addPlayer() {
         if (playerList.size < MAX_PLAYERS) {
             playerList.add(Player())
-            // TODO: don't refresh all items
-            playerAdapter.notifyDataSetChanged()
+            playerAdapter.notifyItemInserted(playerList.size-1)
         } else {
             Toast.makeText(this, R.string.max_players, Toast.LENGTH_SHORT).show()
         }
@@ -78,9 +77,9 @@ class MainActivityNew : AppCompatActivity() {
 
     private fun removePlayer() {
         if (playerList.size > MIN_PLAYERS) {
-            playerList.removeAt(playerList.size-1)
-            // TODO: don't refresh all items
-            playerAdapter.notifyDataSetChanged()
+            val position = playerList.size - 1
+            playerList.removeAt(position)
+            playerAdapter.notifyItemRemoved(position)
         } else {
             Toast.makeText(this, R.string.min_players, Toast.LENGTH_SHORT).show()
         }
@@ -92,7 +91,6 @@ class MainActivityNew : AppCompatActivity() {
             player.resetSex()
         }
 
-        // TODO: don't refresh all items
         playerAdapter.notifyDataSetChanged()
     }
 
