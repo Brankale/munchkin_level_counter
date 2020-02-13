@@ -4,15 +4,26 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.munchkin.custom_views.PlayerAdapter
+import com.example.munchkin.custom_views.PlayerListView
+import com.example.munchkin.models.Player
 
 class MainActivityNew : AppCompatActivity() {
 
     private val TAG: String = MainActivityNew::class.java.simpleName
 
+    lateinit var playerListView: PlayerListView
+    lateinit var playerAdapter: PlayerAdapter
+    private val playerList = ArrayList<Player>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_new)
         setSupportActionBar(findViewById(R.id.action_bar))
+
+        playerListView = findViewById(R.id.player_list)
+        playerAdapter = PlayerAdapter(playerList)
+        playerListView.adapter = playerAdapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -37,15 +48,23 @@ class MainActivityNew : AppCompatActivity() {
     }
 
     private fun addPlayer() {
-        TODO("implement function add player")
+        playerList.add(Player())
+        // TODO: don't refresh all items
+        playerAdapter.notifyDataSetChanged()
     }
 
     private fun removePlayer() {
-        TODO("implement function remove player")
+        if (playerList.isNotEmpty()) {
+            playerList.removeAt(playerList.size-1)
+            // TODO: don't refresh all items
+            playerAdapter.notifyDataSetChanged()
+        }
     }
 
     private fun newGame() {
-        TODO("implement function new game")
+        playerList.clear()
+        // TODO: don't refresh all items
+        playerAdapter.notifyDataSetChanged()
     }
 
 }

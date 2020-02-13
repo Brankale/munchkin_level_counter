@@ -12,12 +12,9 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"/>
 
-    <com.example.munchkin.custom_views.PlayerView
+    <com.example.munchkin.custom_views.PlayerListView
+        android:id="@+id/player_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <com.example.munchkin.custom_views.PlayerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

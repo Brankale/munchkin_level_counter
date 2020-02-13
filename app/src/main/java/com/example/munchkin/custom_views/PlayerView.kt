@@ -16,7 +16,7 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
 
     private val TAG: String = PlayerView::class.java.simpleName
 
-    private val player: Player
+    private var player: Player
 
     private val name: TextView
     private val sex: ImageView
@@ -34,6 +34,9 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
         levelDown = findViewById(R.id.level_down)
 
         player = Player()
+
+        // TODO: xml layout params are lost in the inflate phase so they must be set
+        layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
 
         attrs?.let {
             val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.PlayerView, 0, 0)
@@ -78,6 +81,13 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
             player.levelDown()
             setLevel()
         }
+    }
+
+    fun bind(player: Player) {
+        this.player = player
+        setName()
+        setLevel()
+        setSex()
     }
 
     private fun setName() {
