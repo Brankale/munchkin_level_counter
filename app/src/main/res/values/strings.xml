@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Munchkin</string>
+    <string name="app_name" translatable="false">Munchkin</string>
 
     <string name="player_name">Insert player name</string>
     <string name="level_up">Add level</string>

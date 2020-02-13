@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Munchkin</string>
+    <string name="sex">Sesso</string>
+    <string name="remove_player">Rimuovi giocatore</string>
+    <string name="player_name">Inserisci il nome del giocatore</string>
+    <string name="new_game">Nuova partita</string>
+    <string name="min_players">Non possono esserci meno di 3 giocatori</string>
+    <string name="max_players">Non possono esserci più di 6 giocatori</string>
+    <string name="level_up">Aggiungi livello</string>
+    <string name="level_down">Rimuovi livello</string>
+    <string name="dialog_new_game">Vuoi iniziare una nuova partita?</string>
+    <string name="add_player">Aggiungi giocatore</string>
+</resources>
