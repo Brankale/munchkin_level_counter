@@ -1,8 +1,10 @@
 package com.example.munchkin
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.munchkin.custom_views.PlayerAdapter
 import com.example.munchkin.custom_views.PlayerListView
@@ -41,7 +43,13 @@ class MainActivityNew : AppCompatActivity() {
             true
         }
         R.id.new_game -> {
-            newGame()
+            AlertDialog.Builder(this)
+                    .setMessage(R.string.dialog_new_game)
+                    .setPositiveButton(android.R.string.yes,
+                            DialogInterface.OnClickListener { dialog, which -> newGame() })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show()
+
             true
         }
         else -> super.onOptionsItemSelected(item)
