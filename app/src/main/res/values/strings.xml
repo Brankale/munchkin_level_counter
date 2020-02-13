@@ -14,4 +14,7 @@
     <!-- dialog -->
     <string name="dialog_new_game">Do you want to start a new match?</string>
 
+    <!-- Toast -->
+    <string name="max_players">There cannot be more than 6 players</string>
+
 </resources>

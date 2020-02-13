@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.munchkin.custom_views.PlayerAdapter
@@ -12,11 +13,16 @@ import com.example.munchkin.models.Player
 
 class MainActivityNew : AppCompatActivity() {
 
+    companion object {
+        private const val MIN_PLAYERS = 3
+        private const val MAX_PLAYERS = 6
+    }
+
     private val TAG: String = MainActivityNew::class.java.simpleName
 
     lateinit var playerListView: PlayerListView
     lateinit var playerAdapter: PlayerAdapter
-    private val playerList = ArrayList<Player>()
+    private val playerList = ArrayList<Player>(MIN_PLAYERS)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +32,11 @@ class MainActivityNew : AppCompatActivity() {
         playerListView = findViewById(R.id.player_list)
         playerAdapter = PlayerAdapter(playerList)
         playerListView.adapter = playerAdapter
+
+        // add minimum number of players
+        for (i in 0 until MIN_PLAYERS) {
+            addPlayer()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -56,9 +67,13 @@ class MainActivityNew : AppCompatActivity() {
     }
 
     private fun addPlayer() {
-        playerList.add(Player())
-        // TODO: don't refresh all items
-        playerAdapter.notifyDataSetChanged()
+        if (playerList.size < MAX_PLAYERS) {
+            playerList.add(Player())
+            // TODO: don't refresh all items
+            playerAdapter.notifyDataSetChanged()
+        } else {
+            Toast.makeText(this, R.string.max_players, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun removePlayer() {
@@ -70,7 +85,11 @@ class MainActivityNew : AppCompatActivity() {
     }
 
     private fun newGame() {
-        playerList.clear()
+        for (player in playerList) {
+            player.resetLevel()
+            player.resetSex()
+        }
+
         // TODO: don't refresh all items
         playerAdapter.notifyDataSetChanged()
     }

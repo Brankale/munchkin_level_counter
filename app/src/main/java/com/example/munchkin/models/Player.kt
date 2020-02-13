@@ -32,4 +32,12 @@ class Player {
         sex = !sex
     }
 
+    fun resetLevel() {
+        level = 1
+    }
+
+    fun resetSex() {
+        sex = MALE
+    }
+
 }
