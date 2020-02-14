@@ -9,7 +9,7 @@ import android.widget.*
 import com.example.munchkin.R
 import com.example.munchkin.models.Player
 
-class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
+class PlayerView(context: Context, attrs: AttributeSet? = null) : LinearLayout(context, attrs) {
 
     private val TAG: String = PlayerView::class.java.simpleName
 
@@ -70,6 +70,7 @@ class PlayerView(context: Context, attrs: AttributeSet?) : LinearLayout(context,
             setLevel()
 
             if (player.level == 10) {
+                // TODO: substitute with /values/stings key
                 Toast.makeText(context, "${player.name} won", Toast.LENGTH_LONG).show()
             }
         }

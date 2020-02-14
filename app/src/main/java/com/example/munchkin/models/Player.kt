@@ -6,7 +6,7 @@ class Player {
 
     companion object {
         private const val MALE: Boolean = false
-        private const val FEMALE: Boolean = false
+        private const val FEMALE: Boolean = true
     }
 
     var name: String = ""
@@ -28,16 +28,9 @@ class Player {
         }
     }
 
-    fun changeSex() {
-        sex = !sex
-    }
+    fun changeSex() { sex = !sex }
 
-    fun resetLevel() {
-        level = 1
-    }
-
-    fun resetSex() {
-        sex = MALE
-    }
+    fun resetLevel() { level = 1 }
+    fun resetSex() { sex = MALE }
 
 }

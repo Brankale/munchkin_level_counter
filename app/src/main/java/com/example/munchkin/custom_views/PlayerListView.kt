@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.munchkin.models.Player
 
-class PlayerListView(context: Context, attrs: AttributeSet?) : RecyclerView(context, attrs) {
+class PlayerListView(context: Context, attrs: AttributeSet? = null) : RecyclerView(context, attrs) {
 
     private val TAG: String = PlayerListView::class.java.simpleName
 
@@ -27,7 +27,7 @@ class PlayerListView(context: Context, attrs: AttributeSet?) : RecyclerView(cont
 class PlayerAdapter(val players: ArrayList<Player>?) : RecyclerView.Adapter<PlayerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerViewHolder {
-        val item = PlayerView(parent.context, null)
+        val item = PlayerView(parent.context)
         return PlayerViewHolder(item)
     }
 

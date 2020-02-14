@@ -71,7 +71,7 @@ class MainActivityNew : AppCompatActivity() {
     private fun addPlayer() {
         if (playerList.size < MAX_PLAYERS) {
             playerList.add(Player())
-            playerAdapter.notifyItemInserted(playerList.size-1)
+            playerAdapter.notifyItemInserted(playerList.lastIndex)
         } else {
             toast?.cancel()     // cancel previous toast
             toast = Toast.makeText(this, R.string.max_players, Toast.LENGTH_SHORT)
@@ -81,9 +81,8 @@ class MainActivityNew : AppCompatActivity() {
 
     private fun removePlayer() {
         if (playerList.size > MIN_PLAYERS) {
-            val position = playerList.size - 1
-            playerList.removeAt(position)
-            playerAdapter.notifyItemRemoved(position)
+            playerList.removeAt(playerList.lastIndex)
+            playerAdapter.notifyItemRemoved(playerList.size)
         } else {
             toast?.cancel()     // cancel previous toast
             toast = Toast.makeText(this, R.string.min_players, Toast.LENGTH_SHORT)
