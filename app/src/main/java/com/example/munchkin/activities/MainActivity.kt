@@ -1,4 +1,4 @@
-package com.example.munchkin
+package com.example.munchkin.activities
 
 import android.os.Bundle
 import android.view.Menu
@@ -6,11 +6,12 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.munchkin.R
 import com.example.munchkin.custom_views.PlayerAdapter
 import com.example.munchkin.custom_views.PlayerListView
 import com.example.munchkin.models.Player
 
-class MainActivityNew : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val MIN_PLAYERS = 3
@@ -24,7 +25,7 @@ class MainActivityNew : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_new)
+        setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.action_bar))
 
         playerListView = findViewById(R.id.player_list)

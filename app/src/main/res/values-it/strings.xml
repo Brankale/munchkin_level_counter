@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Munchkin</string>
     <string name="sex">Sesso</string>
     <string name="remove_player">Rimuovi giocatore</string>
     <string name="player_name">Inserisci il nome del giocatore</string>
