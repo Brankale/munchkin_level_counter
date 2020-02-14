@@ -11,8 +11,6 @@ import com.example.munchkin.models.Player
 
 class PlayerView(context: Context, attrs: AttributeSet? = null) : LinearLayout(context, attrs) {
 
-    private val TAG: String = PlayerView::class.java.simpleName
-
     private var player: Player
 
     private val name: TextView
@@ -44,11 +42,11 @@ class PlayerView(context: Context, attrs: AttributeSet? = null) : LinearLayout(c
 
             typedArray.recycle()
 
-            setName()
-            setSex()
+            updateName()
+            updateSex()
         }
 
-        setLevel()
+        updateLevel()
 
         name.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
@@ -62,12 +60,12 @@ class PlayerView(context: Context, attrs: AttributeSet? = null) : LinearLayout(c
 
         sex.setOnClickListener {
             player.changeSex()
-            setSex()
+            updateSex()
         }
 
         levelUp.setOnClickListener {
             player.levelUp()
-            setLevel()
+            updateLevel()
 
             if (player.level == 10) {
                 // TODO: substitute with /values/stings key
@@ -77,22 +75,22 @@ class PlayerView(context: Context, attrs: AttributeSet? = null) : LinearLayout(c
 
         levelDown.setOnClickListener {
             player.levelDown()
-            setLevel()
+            updateLevel()
         }
     }
 
     fun bind(player: Player) {
         this.player = player
-        setName()
-        setLevel()
-        setSex()
+        updateName()
+        updateLevel()
+        updateSex()
     }
 
-    private fun setName() {
+    private fun updateName() {
         name.text = player.name
     }
 
-    private fun setSex() {
+    private fun updateSex() {
         if (player.isMale()) {
             sex.setImageResource(R.drawable.ic_male)
             sex.setBackgroundResource(R.color.male)
@@ -102,7 +100,7 @@ class PlayerView(context: Context, attrs: AttributeSet? = null) : LinearLayout(c
         }
     }
 
-    private fun setLevel() {
+    private fun updateLevel() {
         level.text = player.level.toString()
     }
 

@@ -10,8 +10,6 @@ import com.example.munchkin.models.Player
 
 class PlayerListView(context: Context, attrs: AttributeSet? = null) : RecyclerView(context, attrs) {
 
-    private val TAG: String = PlayerListView::class.java.simpleName
-
     init {
         setHasFixedSize(true)
 
@@ -24,7 +22,7 @@ class PlayerListView(context: Context, attrs: AttributeSet? = null) : RecyclerVi
 
 }
 
-class PlayerAdapter(val players: ArrayList<Player>?) : RecyclerView.Adapter<PlayerViewHolder>() {
+class PlayerAdapter(private val players: ArrayList<Player>?) : RecyclerView.Adapter<PlayerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerViewHolder {
         val item = PlayerView(parent.context)
@@ -41,7 +39,7 @@ class PlayerAdapter(val players: ArrayList<Player>?) : RecyclerView.Adapter<Play
 
 }
 
-class PlayerViewHolder(val view: PlayerView) : RecyclerView.ViewHolder(view) {
+class PlayerViewHolder(private val view: PlayerView) : RecyclerView.ViewHolder(view) {
 
     fun bind(player: Player) {
         view.bind(player)

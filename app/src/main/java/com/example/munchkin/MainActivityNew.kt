@@ -1,6 +1,5 @@
 package com.example.munchkin
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -17,8 +16,6 @@ class MainActivityNew : AppCompatActivity() {
         private const val MIN_PLAYERS = 3
         private const val MAX_PLAYERS = 6
     }
-
-    private val TAG: String = MainActivityNew::class.java.simpleName
 
     private lateinit var playerListView: PlayerListView
     private lateinit var playerAdapter: PlayerAdapter
@@ -58,8 +55,7 @@ class MainActivityNew : AppCompatActivity() {
 
             AlertDialog.Builder(this)
                     .setMessage(R.string.dialog_new_game)
-                    .setPositiveButton(android.R.string.yes,
-                            DialogInterface.OnClickListener { dialog, which -> newGame() })
+                    .setPositiveButton(android.R.string.yes) { _, _ -> newGame() }
                     .setNegativeButton(android.R.string.cancel, null)
                     .show()
 

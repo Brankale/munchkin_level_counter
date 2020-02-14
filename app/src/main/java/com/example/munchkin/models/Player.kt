@@ -2,11 +2,8 @@ package com.example.munchkin.models
 
 class Player {
 
-    private val TAG: String = Player::class.java.simpleName
-
     companion object {
         private const val MALE: Boolean = false
-        private const val FEMALE: Boolean = true
     }
 
     var name: String = ""
@@ -14,7 +11,6 @@ class Player {
     var level: Int = 1
 
     fun isMale() = sex == MALE
-    fun isFemale() = sex == FEMALE
 
     fun levelUp() {
         if (level < 10) {
