@@ -2,7 +2,7 @@
 <resources>
     <string name="sex">Sesso</string>
     <string name="remove_player">Rimuovi giocatore</string>
-    <string name="player_name">Inserisci il nome del giocatore</string>
+    <string name="player_name">Nome del giocatore</string>
     <string name="new_game">Nuova partita</string>
     <string name="min_players">Non possono esserci meno di 3 giocatori</string>
     <string name="max_players">Non possono esserci più di 6 giocatori</string>
