@@ -29,8 +29,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.action_bar))
 
-
-
         playerListView = findViewById(R.id.player_list)
         playerAdapter = PlayerAdapter(playerList)
         playerListView.adapter = playerAdapter
