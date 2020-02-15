@@ -17,6 +17,8 @@
     <!-- Toast -->
     <string name="max_players">There cannot be more than 6 players</string>
     <string name="min_players">There cannot be less than 3 players</string>
+    <string name="player_wins">%s wins</string>
+    <string name="someone_won">Someone won</string>
 
     <!-- settings -->
     <string name="settings">Settings</string>

@@ -69,7 +69,11 @@ class PlayerView(context: Context, attrs: AttributeSet? = null) : LinearLayout(c
 
             if (player.level == 10) {
                 // TODO: substitute with /values/stings key
-                Toast.makeText(context, "${player.name} won", Toast.LENGTH_LONG).show()
+                if (player.name.isNotEmpty()) {
+                    Toast.makeText(context, resources.getString(R.string.player_wins, player.name), Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(context, R.string.someone_won, Toast.LENGTH_LONG).show()
+                }
             }
         }
 
