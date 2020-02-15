@@ -1,18 +1,23 @@
 package com.example.munchkin.activities
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.Preference
+import androidx.preference.PreferenceManager
 import com.example.munchkin.R
 import com.example.munchkin.custom_views.PlayerAdapter
 import com.example.munchkin.custom_views.PlayerListView
 import com.example.munchkin.models.Player
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
 
     companion object {
         private const val MIN_PLAYERS = 3
@@ -37,6 +42,18 @@ class MainActivity : AppCompatActivity() {
         for (i in 0 until MIN_PLAYERS) {
             addPlayer()
         }
+
+        PreferenceManager
+                .getDefaultSharedPreferences(this)
+                .registerOnSharedPreferenceChangeListener(this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        PreferenceManager
+                .getDefaultSharedPreferences(this)
+                .unregisterOnSharedPreferenceChangeListener(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -69,6 +86,16 @@ class MainActivity : AppCompatActivity() {
             true
         }
         else -> super.onOptionsItemSelected(item)
+    }
+
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        sharedPreferences?.let {
+            if (it.getBoolean("keep_screen_on", false)) {
+                window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+            } else {
+                window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+            }
+        }
     }
 
     private fun addPlayer() {

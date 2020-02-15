@@ -25,9 +25,7 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        val id: Int = item.itemId
-
-        if (id == R.id.home) {
+        if (item.itemId == R.id.home) {
             NavUtils.navigateUpFromSameTask(this)
         }
 
