@@ -1,5 +1,6 @@
 package com.example.munchkin.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -28,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.action_bar))
 
+
+
         playerListView = findViewById(R.id.player_list)
         playerAdapter = PlayerAdapter(playerList)
         playerListView.adapter = playerAdapter
@@ -44,15 +47,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.add_player -> {
+        R.id.action_add_player -> {
             addPlayer()
             true
         }
-        R.id.remove_player -> {
+        R.id.action_remove_player -> {
             removePlayer()
             true
         }
-        R.id.new_game -> {
+        R.id.action_new_game -> {
 
             AlertDialog.Builder(this)
                     .setMessage(R.string.dialog_new_game)
@@ -60,6 +63,11 @@ class MainActivity : AppCompatActivity() {
                     .setNegativeButton(android.R.string.cancel, null)
                     .show()
 
+            true
+        }
+        R.id.action_settings -> {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
             true
         }
         else -> super.onOptionsItemSelected(item)

@@ -4,21 +4,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/add_player"
+        android:id="@+id/action_add_player"
         android:title="@string/add_player"
         android:icon="@drawable/ic_add_black_24dp"
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/remove_player"
+        android:id="@+id/action_remove_player"
         android:title="@string/remove_player"
         android:icon="@drawable/ic_remove_black_24dp"
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/new_game"
+        android:id="@+id/action_new_game"
         android:title="@string/new_game"
         android:icon="@drawable/ic_autorenew_black_24dp"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/settings"
+        app:showAsAction="never"/>
 
 </menu>
