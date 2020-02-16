@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         playerListView.adapter = playerAdapter
 
         // add minimum number of players
-        for (i in 0 until MIN_PLAYERS) {
+        for (i in 0..MIN_PLAYERS) {
             addPlayer()
         }
 
@@ -88,10 +88,13 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         sharedPreferences?.let {
+            // TODO: keep screen on doesn't work
             if (it.getBoolean("keep_screen_on", false)) {
-                window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                Toast.makeText(this, "not implemented", Toast.LENGTH_SHORT).show()
+                //window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
             } else {
-                window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                Toast.makeText(this, "not implemented", Toast.LENGTH_SHORT).show()
+                //window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
             }
         }
     }
