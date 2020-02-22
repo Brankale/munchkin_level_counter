@@ -5,6 +5,13 @@
         android:key="keep_screen_on"
         android:title="@string/keep_screen_on_title"
         android:summary="@string/keep_screen_on_summary"
-        android:icon="@drawable/ic_brightness_low_black_24dp"/>
+        android:icon="@drawable/ic_brightness_high_black_24dp"/>
+
+    <ListPreference
+        android:key="max_level"
+        android:title="@string/max_level_title"
+        android:summary="@string/max_level_summary"
+        android:entries="@array/max_level_entries"
+        android:entryValues="@array/max_level_values"/>
 
 </PreferenceScreen>

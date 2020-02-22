@@ -7,7 +7,6 @@ import androidx.core.app.NavUtils
 import com.example.munchkin.R
 import com.example.munchkin.fragment.SettingsFragment
 
-
 class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,7 +1,6 @@
 package com.example.munchkin.activities
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -15,7 +14,7 @@ import com.example.munchkin.custom_views.PlayerAdapter
 import com.example.munchkin.custom_views.PlayerListView
 import com.example.munchkin.models.Player
 
-class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
+class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val MIN_PLAYERS = 3
@@ -25,7 +24,6 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
     private lateinit var playerListView: PlayerListView
     private lateinit var playerAdapter: PlayerAdapter
     private val playerList = ArrayList<Player>(MIN_PLAYERS)
-    private var toast: Toast? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,17 +39,14 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
             addPlayer()
         }
 
-        PreferenceManager
-                .getDefaultSharedPreferences(this)
-                .registerOnSharedPreferenceChangeListener(this)
-    }
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
 
-    override fun onDestroy() {
-        super.onDestroy()
+        // TODO: implement this feature without restarting the app
+        if (prefs.getBoolean("keep_screen_on", false)) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
 
-        PreferenceManager
-                .getDefaultSharedPreferences(this)
-                .unregisterOnSharedPreferenceChangeListener(this)
+        newGame()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -86,27 +81,12 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         else -> super.onOptionsItemSelected(item)
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        sharedPreferences?.let {
-            // TODO: keep screen on doesn't work
-            if (it.getBoolean("keep_screen_on", false)) {
-                Toast.makeText(this, "not implemented", Toast.LENGTH_SHORT).show()
-                //window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-            } else {
-                Toast.makeText(this, "not implemented", Toast.LENGTH_SHORT).show()
-                //window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-            }
-        }
-    }
-
     private fun addPlayer() {
         if (playerList.size < MAX_PLAYERS) {
             playerList.add(Player())
             playerAdapter.notifyItemInserted(playerList.lastIndex)
         } else {
-            toast?.cancel()     // cancel previous toast
-            toast = Toast.makeText(this, R.string.max_players, Toast.LENGTH_SHORT)
-            toast?.show()
+            Toast.makeText(this, R.string.max_players, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -115,14 +95,17 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
             playerList.removeAt(playerList.lastIndex)
             playerAdapter.notifyItemRemoved(playerList.size)
         } else {
-            toast?.cancel()     // cancel previous toast
-            toast = Toast.makeText(this, R.string.min_players, Toast.LENGTH_SHORT)
-            toast?.show()
+            Toast.makeText(this, R.string.min_players, Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun newGame() {
+
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val maxLevel = prefs.getString("max_level", "10")?.toInt() ?: 10
+
         for (player in playerList) {
+            player.maxLevel = maxLevel
             player.resetLevel()
             player.resetSex()
         }

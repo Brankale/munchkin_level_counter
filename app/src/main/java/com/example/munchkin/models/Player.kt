@@ -6,6 +6,9 @@ class Player {
         private const val MALE: Boolean = false
     }
 
+    private var minLevel: Int = 1
+    var maxLevel: Int = 10
+
     var name: String = ""
     var sex: Boolean = MALE
     var level: Int = 1
@@ -13,16 +16,18 @@ class Player {
     fun isMale() = sex == MALE
 
     fun levelUp() {
-        if (level < 10) {
+        if (level < maxLevel) {
             ++level
         }
     }
 
     fun levelDown() {
-        if (level > 1) {
+        if (level > minLevel) {
             --level
         }
     }
+
+    fun isAtMaxLevel() = level == maxLevel
 
     fun changeSex() { sex = !sex }
 

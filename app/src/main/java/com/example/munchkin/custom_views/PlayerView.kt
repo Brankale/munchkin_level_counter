@@ -67,7 +67,7 @@ class PlayerView(context: Context, attrs: AttributeSet? = null) : LinearLayout(c
             player.levelUp()
             updateLevel()
 
-            if (player.level == 10) {
+            if (player.isAtMaxLevel()) {
                 // TODO: substitute with /values/stings key
                 if (player.name.isNotEmpty()) {
                     Toast.makeText(context, resources.getString(R.string.player_wins, player.name), Toast.LENGTH_LONG).show()

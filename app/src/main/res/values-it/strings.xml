@@ -11,8 +11,11 @@
     <string name="dialog_new_game">Vuoi iniziare una nuova partita?</string>
     <string name="add_player">Aggiungi giocatore</string>
     <string name="keep_screen_on_title">Mantieni lo schermo acceso</string>
-    <string name="keep_screen_on_summary">Mantieni lo schermo acceso quando usi l\'app</string>
+    <string name="keep_screen_on_summary">Mantieni lo schermo acceso quando usi l\'app (richiede il riavvio)</string>
     <string name="settings">Impostazioni</string>
     <string name="player_wins">%s vince</string>
     <string name="someone_won">Qualcuno ha vinto</string>
+    <string name="max_level_summary">Sarà applicato alla prossima partita</string>
+    <string name="max_level_title">Livello massimo del giocatore</string>
+    <string name="level">Livello</string>
 </resources>

@@ -8,6 +8,7 @@
             <enum name="male" value="0"/>
             <enum name="female" value="1"/>
         </attr>
+        <attr name="maxLevel" format="integer"/>
     </declare-styleable>
 
 </resources>
